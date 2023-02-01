@@ -69,8 +69,10 @@ class MaintenanceScreen(tk.Frame):
         # 0.5975  |  .                .                X================X================X================
         #         |  X================X================X
 
-        plt.draw.text = Database.select('minions', ('id', 'name'))(self, bd=0, font=('Helvetica', 36)).place(relx=0.5900, rely=0)
-        plt.draw.text = {"Minion": ['id'] + ['name'] in plt.draw.text}
+        text = tk.Text(self, text=Database.select('minions', ('id', 'name')))
+        text = {"Minion": ['id'] + ['name'] in text}
+        text.configure(highlightthickness=0, bd=0, relief='flat')
+        text.place(relx=0.5900, rely=0)
         obcbtn = tk.Button(self, image=PhotoCache.get("maint_obc_btn.png"), command=self.gen_obc)  # done
         obcbtn.configure(highlightthickness=0, bd=0, relief='flat')
         obcbtn.place(relx=0.04175, rely=0.2610)
