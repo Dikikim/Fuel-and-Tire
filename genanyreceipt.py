@@ -605,7 +605,7 @@ class PDFBuilder:
 			self.pdf.options(9, italic=True, align='center')
 			self.pdf.addline("Tires inflated with " + str(Maint.vals["nitrogen_percent"]) + "% pure FTS")
 			self.pdf.options(11, italic=True, bold=True, align='center')
-			self.pdf.addline("ÅASTRAEA Nitrogen")
+			self.pdf.addline((chr(197) + "ASTRAEA Nitrogen")) #(chr(197) is Å
 
 	def add_closing(self, add_tire_costs=False):
 		self.pdf.skip(10)
