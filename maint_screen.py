@@ -69,10 +69,12 @@ class MaintenanceScreen(tk.Frame):
         # 0.5975  |  .                .                X================X================X================
         #         |  X================X================X
 
-        text = tk.Text(self, text=Database.select('minions', ('id', 'name')))
-        text = {"Minion": ['id'] + ['name'] in text}
-        text.configure(highlightthickness=0, bd=0, relief='flat')
-        text.place(relx=0.5900, rely=0)
+        maintenance_screen_logo = PhotoCache.get("AASTRAEA logo.png")
+        tk.Label(self, bd=0, image=maintenance_screen_logo).place(x=2245, y=1800, relheight=0.0610, relwidth=0.0182)
+        txtbar = tk.Text(self, text=Database.select('minions', ('id', 'name')))
+        txtbar = {"Minion": ['id'] + ['name'] in txtbar}
+        txtbar.configure(highlightthickness=0, bd=0, relief='flat')
+        txtbar.place(relx=0.5900, rely=0)
         obcbtn = tk.Button(self, image=PhotoCache.get("maint_obc_btn.png"), command=self.gen_obc)  # done
         obcbtn.configure(highlightthickness=0, bd=0, relief='flat')
         obcbtn.place(relx=0.04175, rely=0.2610)
