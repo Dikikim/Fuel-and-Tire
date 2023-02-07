@@ -70,7 +70,7 @@ class MaintenanceScreen(tk.Frame):
         #         |  X================X================X
 
         maintenance_screen_logo = PhotoCache.get("AASTRAEA logo.png")
-        tk.Label(self, bd=0, image=maintenance_screen_logo).place(x=2245, y=1800, relheight=0.0610, relwidth=0.0182)
+        tk.Label(self, bd=0, image=maintenance_screen_logo).place(x=0.2245, y=0.1800, relheight=0.0610, relwidth=0.0182)
         txtbar = tk.Text(self, text=Database.select('minions', ('id', 'name')))
         txtbar = {"Minion": ['id'] + ['name'] in txtbar}
         txtbar.configure(highlightthickness=0, bd=0)
